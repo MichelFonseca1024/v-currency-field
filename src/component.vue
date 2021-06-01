@@ -4,7 +4,6 @@
          :class="`${classes}`"
          :value="formattedValue"
          v-bind="$props"
-         type="tel"
          @change="change"
          @input="update"
          v-currency="{precision, decimal, thousands}"/>
@@ -56,7 +55,7 @@ export default {
     appendOuterIcon: String,
     appendOuterIconCb: Function,
     autofocus: Boolean,
-    box: Boolean,
+    filled: Boolean,
     browserAutocomplete: String,
     clearable: Boolean,
     clearIcon: {

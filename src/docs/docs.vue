@@ -10,11 +10,10 @@
   <p class="text-center">
     <a class="btn" href="https://github.com/vuejs-tips/v-money">https://github.com/vuejs-tips/v-money</a>
   </p>
-
   <label>Component</label>
   <div class="columns">
     <div class="column col-6 col-sm-12">
-      <money v-model="price" class="form-input input-lg" v-bind="config"></money>
+      <v-currency-field v-model="price"  v-bind="config"></v-currency-field>
     </div>
     <div class="column col-6 col-sm-12">
       <h3>{{price}}</h3>
@@ -24,7 +23,7 @@
   <label>Directive</label>
   <div class="columns">
     <div class="column col-6 col-sm-12">
-      <input type="tel" v-money="config" v-model.lazy="priceDirective" class="form-input input-lg" style="text-align: right" />
+      <input type="tel" v-currency="config" v-model.lazy="priceDirective" class="form-input input-lg" style="text-align: right" />
     </div>
     <div class="column col-6 col-sm-12">
       <h3>{{priceDirective}}</h3>
@@ -34,7 +33,7 @@
   <label>Directive on Custom Component (TextField from <a href="https://vuetifyjs.com/components/text-fields">vuetify</a>)</label>
   <div class="columns">
     <div class="column col-6 col-sm-12">
-      <v-text-field v-money="config" v-model.lazy="priceVuetify"></v-text-field>
+      <v-text-field v-currency="config" v-model.lazy="priceVuetify"></v-text-field>
     </div>
     <div class="column col-6 col-sm-12">
       <h3>{{priceVuetify}}</h3>
@@ -106,6 +105,7 @@ import vuetify from 'vuetify'
 
 Vue.use(money)
 Vue.use(vuetify)
+import 'vuetify/dist/vuetify.min.css'
 
 export default {
   data () {
